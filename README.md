@@ -1,9 +1,9 @@
 # Forward Protons short exercise for the 2020 CMSDAS
 
 General information on CMSDAS 2020:
-* [https://indico.cern.ch/e/cmsvdas2020](CMSDAS2020 main page)
-* [https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookExercisesCMSDataAnalysisSchool#CmsDas2020CERN](All short exercises)
-* [https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolCERN2020TaggedProtonsShortExercise](Exercise Twiki)
+* [CMSDAS2020 main page](https://indico.cern.ch/e/cmsvdas2020)
+* [All short exercises](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookExercisesCMSDataAnalysisSchool#CmsDas2020CERN)
+* [Exercise Twiki](https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolCERN2020TaggedProtonsShortExercise)
 
 **Video introduction**: [watch here!](https://videos.cern.ch/video/0000000)
 
