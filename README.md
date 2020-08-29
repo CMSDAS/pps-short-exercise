@@ -23,6 +23,8 @@ The exercise is organised in three Jupyter notebooks:
 * [Optical functions](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/Optical-Functions.ipynb)  
 This notebook requires ROOT to be installed.
  
+* [Tracker Efficiencies](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/PixelEfficiencies.ipynb)  
+
 * [PPS protons in dilepton events](https://nbviewer.jupyter.org/cmsdas/pps-short-exercise/blob/master/Dilepton-Protons.ipynb)  
 The installation of the following packages is needed to run the notebook:  
 `python3 -m pip install --user uproot4 awkward1 mplhep`  
