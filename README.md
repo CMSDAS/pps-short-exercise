@@ -14,7 +14,7 @@ To run the notebooks with regular CERN resources:
 * Open a [SWAN session](swan.cern.ch) (the defaults are good, as of writing this pick software stack 97a and make sure to use Python3)
 * In the SWAN session, click on the item on the right-hand side that says "Download Project from git"
 * Copy-paste https://github.com/cmsdas/pps-short-exercise.git
-* You're all set and can click on the three exercises, `tau_short_exercise_1.ipynb` and `tau_short_exercise_2.ipynb`
+* You're all set and can click on the three exercises, `Optical-Functions.ipynb`, `Optical-Functions.ipynb`, and `Dilepton-Protons.ipynb`
 
 ### Table of content
 
