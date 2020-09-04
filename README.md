@@ -21,7 +21,6 @@ To run the notebooks with regular CERN resources:
 The exercise is organised in three Jupyter notebooks:
 
 * [Optical functions](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/Optical-Functions.ipynb)  
-This notebook requires ROOT to be installed.
  
 * [Tracker Efficiencies](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/PixelEfficiencies.ipynb)  
 
