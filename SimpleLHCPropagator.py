@@ -45,6 +45,23 @@ class SimpleLHCPropagator:
                          )
         self.OF_tags_main_ = ( "x_D", "v_x", "L_x", "y_D", "v_y", "L_y" )
 
+        self.draw_xtitles_ = {}
+        self.draw_xtitles_[ "x_D" ] = "#xi"
+        self.draw_xtitles_[ "xi_vs_x" ] = "x (cm)"
+        self.draw_xtitles_[ "v_x" ] = "#xi"
+        self.draw_xtitles_[ "L_x" ] = "#xi"
+        self.draw_xtitles_[ "y_D" ] = "#xi"
+        self.draw_xtitles_[ "v_y" ] = "#xi"
+        self.draw_xtitles_[ "L_y" ] = "#xi"
+        self.draw_ytitles_ = {}
+        self.draw_ytitles_[ "x_D" ] = "x_{D} (cm)"
+        self.draw_ytitles_[ "xi_vs_x" ] = "#xi(x)"
+        self.draw_ytitles_[ "v_x" ] = "v_{x}"
+        self.draw_ytitles_[ "L_x" ] = "L_{x} (cm)"
+        self.draw_ytitles_[ "y_D" ] = "y_{D} (cm)"
+        self.draw_ytitles_[ "v_y" ] = "v_{y}"
+        self.draw_ytitles_[ "L_y" ] = "L_{y} (cm)"
+
         # Map of files per crossing angle
         self.principal_xangles_ = None
         self.optical_functions_ = {}
@@ -96,34 +113,62 @@ class SimpleLHCPropagator:
         return self.OF_tags_main_
     
     def draw_function( self, xangle, rpid, tag):
-        canvas_ = ROOT.TCanvas()
+        w = 800
+        h = 600
+        canvas_ = ROOT.TCanvas( "canvas_{}_{}_{}".format( xangle, rpid, tag ), "", w, h )
+        canvas_.SetLeftMargin( 0.15 )
         function_ = self.optical_functions_[ xangle ][ rpid ][ tag ]
-        function_.Draw()
+        xmin_ = function_.GetXmin()
+        xmax_ = function_.GetXmax()
+        y1_ = function_.Eval( xmin_ ) 
+        y2_ = function_.Eval( xmax_ ) 
+        frame_ = canvas_.DrawFrame( xmin_, np.min( (y1_,y2_) ), xmax_, np.max( (y1_,y2_) ) )
+        frame_.GetXaxis().SetTitle( self.draw_xtitles_[ tag ] )
+        frame_.GetYaxis().SetTitle( self.draw_ytitles_[ tag ] )
+        function_.Draw( "SAME" )
         canvas_.Draw()
         return ( function_, canvas_ )
     
     def draw_function_vs_rpid( self, xangle, tag):
-        canvas_ = ROOT.TCanvas()
+        w = 800
+        h = 600
+        canvas_ = ROOT.TCanvas( "canvas_{}_{}".format( xangle, tag ), "", w, h )
+        canvas_.SetLeftMargin( 0.15 )
         functions_ = []
         for rpid in self.RPInfoId_:
             functions_.append( self.optical_functions_[ xangle ][ rpid ][ tag ] )
             if len( functions_ ) == 1:
-                functions_[-1].Draw()
-            else:
-                functions_[-1].Draw("SAME")
+                xmin_ = functions_[-1].GetXmin()
+                xmax_ = functions_[-1].GetXmax()
+                y1_ = functions_[-1].Eval( xmin_ ) 
+                y2_ = functions_[-1].Eval( xmax_ ) 
+                frame_ = canvas_.DrawFrame( xmin_, np.min( (y1_,y2_) ), xmax_, np.max( (y1_,y2_) ) )
+                frame_.GetXaxis().SetTitle( self.draw_xtitles_[ tag ] )
+                frame_.GetYaxis().SetTitle( self.draw_ytitles_[ tag ] )
+
+            functions_[-1].Draw("SAME")
             
         canvas_.Draw()
         return ( functions_, canvas_ )
 
     def draw_function_vs_xangle( self, rpid, tag):
-        canvas_ = ROOT.TCanvas()
+        w = 800
+        h = 600
+        canvas_ = ROOT.TCanvas( "canvas_{}_{}".format( rpid, tag ), "", w, h )
+        canvas_.SetLeftMargin( 0.15 )
         functions_ = []
         for xangle in self.principal_xangles_:
             functions_.append( self.optical_functions_[ xangle ][ rpid ][ tag ] )
             if len( functions_ ) == 1:
-                functions_[-1].Draw()
-            else:
-                functions_[-1].Draw("SAME")
+                xmin_ = functions_[-1].GetXmin()
+                xmax_ = functions_[-1].GetXmax()
+                y1_ = functions_[-1].Eval( xmin_ ) 
+                y2_ = functions_[-1].Eval( xmax_ ) 
+                frame_ = canvas_.DrawFrame( xmin_, np.min( (y1_,y2_) ), xmax_, np.max( (y1_,y2_) ) )
+                frame_.GetXaxis().SetTitle( self.draw_xtitles_[ tag ] )
+                frame_.GetYaxis().SetTitle( self.draw_ytitles_[ tag ] )
+
+            functions_[-1].Draw("SAME")
             
         canvas_.Draw()
         return ( functions_, canvas_ )
