@@ -134,9 +134,10 @@ class SimpleLHCPropagator:
         h = 600
         canvas_ = ROOT.TCanvas( "canvas_{}_{}".format( xangle, tag ), "", w, h )
         canvas_.SetLeftMargin( 0.15 )
-        functions_ = []
+        functions_ = []; labels_=[]
         for rpid in self.RPInfoId_:
             functions_.append( self.optical_functions_[ xangle ][ rpid ][ tag ] )
+            labels_.append("RPid = {}".format( rpid ))
             if len( functions_ ) == 1:
                 xmin_ = functions_[-1].GetXmin()
                 xmax_ = functions_[-1].GetXmax()
@@ -146,19 +147,24 @@ class SimpleLHCPropagator:
                 frame_.GetXaxis().SetTitle( self.draw_xtitles_[ tag ] )
                 frame_.GetYaxis().SetTitle( self.draw_ytitles_[ tag ] )
 
+            functions_[-1].SetLineColor(rpid%9-1)
+            functions_[-1].SetLineWidth(3)
             functions_[-1].Draw("SAME")
             
-        canvas_.Draw()
-        return ( functions_, canvas_ )
+        legend=ROOT.TLegend(0.15,0.6,0.45,0.9)
+        for l,f in zip(labels_,functions_): legend.AddEntry(f,l,'l')
+        legend.Draw("Same"); canvas_.Draw()
+        return ( functions_, canvas_, legend)
 
     def draw_function_vs_xangle( self, rpid, tag):
         w = 800
         h = 600
         canvas_ = ROOT.TCanvas( "canvas_{}_{}".format( rpid, tag ), "", w, h )
         canvas_.SetLeftMargin( 0.15 )
-        functions_ = []
+        functions_ = []; labels_=[]
         for xangle in self.principal_xangles_:
             functions_.append( self.optical_functions_[ xangle ][ rpid ][ tag ] )
+            labels_.append("#alpha_{X} = %d #murad"%( xangle ))
             if len( functions_ ) == 1:
                 xmin_ = functions_[-1].GetXmin()
                 xmax_ = functions_[-1].GetXmax()
@@ -168,10 +174,14 @@ class SimpleLHCPropagator:
                 frame_.GetXaxis().SetTitle( self.draw_xtitles_[ tag ] )
                 frame_.GetYaxis().SetTitle( self.draw_ytitles_[ tag ] )
 
+            functions_[-1].SetLineColor(int(xangle/10-10))
+            functions_[-1].SetLineWidth(3)
             functions_[-1].Draw("SAME")
             
-        canvas_.Draw()
-        return ( functions_, canvas_ )
+        legend=ROOT.TLegend(0.15,0.6,0.45,0.9)
+        for l,f in zip(labels_,functions_): legend.AddEntry(f,l,'l')
+        legend.Draw("Same"); canvas_.Draw()
+        return ( functions_, canvas_, legend)
 
     def eval( self, rpid, xangle, tag, x ):
 
