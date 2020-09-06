@@ -12,8 +12,8 @@ General information on CMSDAS 2020:
 
 To run the notebooks with regular CERN resources:
 * Open a [SWAN session](https://swan.cern.ch) (the defaults are good, as of writing this pick software stack 97a and make sure to use Python3)
-* In the SWAN session, click on the item on the right-hand side that says "Download Project from git" ![Download Project from git](https://twiki.cern.ch/twiki/pub/CMS/SWGuideCMSDataAnalysisSchoolCERN2020TaggedProtonsShortExercise/download_projext_trim.png)
-* Copy-paste https://github.com/cmsdas/pps-short-exercise.githttps://twiki.cern.ch/twiki/pub/CMS/SWGuideCMSDataAnalysisSchoolCERN2020TaggedProtonsShortExercise/download_projext_trim.png
+* In the SWAN session, click on the item on the right-hand side that says "Download Project from git" ![SWAN](https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png)
+* Copy-paste https://github.com/cmsdas/pps-short-exercise.git
 * You're all set and can click on the three exercises, `Optical-Functions.ipynb`, `PixelEfficiencies.ipynb`, and `Dilepton-Protons.ipynb`
 
 ## Table of content
