@@ -5,7 +5,7 @@ General information on CMSDAS 2020:
 * [All short exercises](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookExercisesCMSDataAnalysisSchool#CmsDas2020CERN)
 * [Exercise Twiki](https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideCMSDataAnalysisSchoolCERN2020TaggedProtonsShortExercise)
 
-**Video introduction**: [watch here!](https://videos.cern.ch/video/0000000)
+**Video introduction**: [watch here!](https://videos.cern.ch/record/2730189)
 
 ## Recommended way to run the exercise (SWAN)
 [![SWAN](https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png)](https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/cmsdas/pps-short-exercise.git)
