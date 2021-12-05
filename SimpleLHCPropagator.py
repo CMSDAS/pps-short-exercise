@@ -75,6 +75,7 @@ class SimpleLHCPropagator:
                     self.optical_functions_[ xangle ][ rpid ] = {}
                     for tag in self.OF_tags_main_:
                         gr_ = self.get_function( xangle, rpid, tag )
+                        if not gr_: continue
                         # x is xi 
                         x_ = gr_.GetX()
                         y_ = gr_.GetY()
@@ -103,7 +104,10 @@ class SimpleLHCPropagator:
         path_ = self.RPInfoId_[rpid]["dirName"] + "/g_" + tag + "_vs_xi";
         print ( "Accessing {}".format( path_ ) )
         file_ = self.files_[ xangle ]
-        rootFile_ = ROOT.TFile( file_ , "READ" )
+        rootFile_ = ROOT.TFile.Open( file_ )
+        if not rootFile_:
+            print('ERROR: Something wrong with the input file: '+file_)
+            return None
         if not file_ in self.open_root_files_:
             self.open_root_files_[ file_ ] = rootFile_
         obj_ = rootFile_.Get( path_ )
