@@ -49,13 +49,13 @@ This will checkout the code and setup your environment for future use. After run
 
 The exercise is organised in three Jupyter notebooks:
 
-### 1. [Optical functions](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/Optical-Functions.ipynb)  
+### 1. [Optical functions](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/DAS2022/Optical-Functions.ipynb)  
 
 In the first exercise, we will discuss proton transport and how protons propagate along the beamline under LHC magnetic field influence. Beam protons, taking place in diffractive interactions, can be scattered at small angles &theta; (usually measured in &mu;rad) and lose their momentum (typically denoted by &xi;). 
 
 You can consult also with this [video](https://videos.cern.ch/record/2729663) recorded for DAS2020.
  
-### 2. [Tracker Efficiencies](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/PixelEfficiencies.ipynb)  
+### 2. [Tracker Efficiencies](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/DAS2022/PixelEfficiencies.ipynb)  
 
 
 Tracker efficiencies are crucial to make proton data usable. Protons are available in two reconstruction flavors: singleRP and multiRP. We will now focus on the second category and see how we can extract the adequate efficiency corrections ([video@CMSDAS2020](https://videos.cern.ch/record/2728988)).
@@ -63,7 +63,7 @@ Tracker efficiencies are crucial to make proton data usable. Protons are availab
 Please open the notebook called 'PixelEfficiencies' and follow [this video](https://videos.cern.ch/record/2729281).
 
 
-### 3. [PPS protons in dilepton events](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/master/Dilepton-Protons.ipynb)  
+### 3. [PPS protons in dilepton events](https://nbviewer.jupyter.org/github/cmsdas/pps-short-exercise/blob/DAS2022/Dilepton-Protons.ipynb)  
 
 In the third exercise, we will implement what we learned from the first two exercises on the real data. The dataset we will use was recorded during the 2017 data taking period. 
 
